@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- hibernate config -->
+        <property name="connection.url">jdbc:postgresql://localhost:5432/HibernateOkulDB</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+
+        <mapping class="com.yeliz.repository.entity.Ogretmen"></mapping>
+        <mapping class="com.yeliz.repository.entity.Ogrenci"></mapping>
+        <mapping class="com.yeliz.repository.entity.Sinif"></mapping>
+
+
+
+    </session-factory>
+</hibernate-configuration>

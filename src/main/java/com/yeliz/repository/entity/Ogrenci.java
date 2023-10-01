@@ -17,6 +17,11 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
+//@NamedQueries({
+//        @NamedQuery(name="Ogrenci.findByid",query = "SELECT id, dtarihi, isim, soyisim, tckimlikno
+//	FROM tbl_ogrenci=:id;")
+//})
 public class Ogrenci {
     @Id
     @GeneratedValue(strategy = IDENTITY)

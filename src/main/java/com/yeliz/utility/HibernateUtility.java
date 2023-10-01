@@ -1,4 +1,4 @@
-package com.utility;
+package com.yeliz.utility;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

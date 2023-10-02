@@ -24,7 +24,6 @@ public class Sinif {
 
     private String sinifAdi;
 
-
     private Long ogretmenId;
 
     @ElementCollection

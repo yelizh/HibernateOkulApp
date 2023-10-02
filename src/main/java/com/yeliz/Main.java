@@ -1,66 +1,63 @@
 package com.yeliz;
 
+
+import com.yeliz.controller.OgrenciController;
+import com.yeliz.controller.OgretmenController;
+import com.yeliz.controller.SinifController;
+import com.yeliz.repository.entity.KisiselBilgiler;
+import com.yeliz.repository.entity.Ogrenci;
+import com.yeliz.repository.entity.Ogretmen;
+import com.yeliz.repository.entity.Sinif;
+import com.yeliz.repository.enums.EBrans;
+
+import java.time.LocalDate;
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) {
+            public static void main(String[] args) {
+
+                //ÖDEVÖDEVÖDEVÖDEVÖDEV
+                // Ogretmen ve Sinif icin gerekli katmanları olusturalim.
+                // Main metodunda controller aracılığıyla her entity için save işlemini gerçekleştirelim.
 
 
-//
-//    Ogretmen ogretmen= Ogretmen.builder()
-//            .kisiselBilgiler(KisiselBilgiler.builder()
-//                    .isim("Serap")
-//                    .soyisim("Kılınc")
-//                    .tcKimlikNo("01111111111")
-//                    .build())
-//            .brans(EBrans.KIMYA)
-//            .iseBaslamaTarihi(LocalDate.of(2020,10,10))
-//        .build();
-//
-//        ss.save(ogretmen);
-//
-//        Ogrenci ogrenci=Ogrenci.builder()
-//                .kisiselBilgiler(KisiselBilgiler.builder()
-//                        .isim("Yeliz")
-//                        .soyisim("H.")
-//                        .tcKimlikNo("5202577777")
-//                        .build())
-//                .dTarihi(LocalDate.of(2023,7,5))
-//                .build();
-//
-//        Ogrenci ogrenci1=Ogrenci.builder()
-//                .kisiselBilgiler(KisiselBilgiler.builder()
-//                        .isim("Sevilay")
-//                        .soyisim("B.U.")
-//                        .tcKimlikNo("7777777777")
-//                        .build())
-//                .dTarihi(LocalDate.of(2023,7,5))
-//                .build();
-//
-//        Ogrenci ogrenci2=Ogrenci.builder()
-//                .kisiselBilgiler(KisiselBilgiler.builder()
-//                        .isim("Merve")
-//                        .soyisim("B.")
-//                        .tcKimlikNo("777777777")
-//                        .build())
-////                     .dTarihi(LocalDate.of(2023,7,5))
-//                .build();
-//        ss.save(ogrenci);
-//        ss.save(ogrenci1);
-//        ss.save(ogrenci2);
-//
-//        Sinif sinif= Sinif.builder()
-//                .sinifAdi("Java11")
-//                .ogrenciler(Arrays.asList(ogrenci1.getKisiselBilgiler().getIsim()
-//                        ,ogrenci2.getKisiselBilgiler().getIsim()
-//                        ,ogrenci.getKisiselBilgiler().getIsim()))//ogrenci isimlerini getir
-//                .ogretmenId(ogretmen.getId())//ogretmenid al
-//                .build();
-//
-//        ss.save(sinif);
-//
-//
-//
-//    tt.commit();
-//    ss.close();
+                Ogrenci ogrenci = Ogrenci.builder()
+                        .kisiselBilgiler(KisiselBilgiler.builder()
+                                .isim("Ali")
+                                .soyisim("Dogan")
+                                .tcKimlikNo("1234789")
+                                .build())
+                        .dTarihi(LocalDate.of(1995,3,19))
+                        .build();
+               OgrenciController ogrenciController = new OgrenciController();
+               ogrenciController.save(ogrenci);
 
-    }
-}
+                Ogretmen ogretmen=Ogretmen.builder()
+                        .brans(EBrans.KIMYA)
+                        .iseBaslamaTarihi(LocalDate.of(2020,10,2))
+                        .kisiselBilgiler(KisiselBilgiler.builder()
+                                .isim("Gaye")
+                                .soyisim("Akyol")
+                                .tcKimlikNo("819716")
+                                .build())
+                                .build();
+                OgretmenController ogretmenController=new OgretmenController();
+                ogretmenController.save(ogretmen);
+
+                Sinif sinif=Sinif.builder()
+                        .ogretmenId(ogretmen.getId())
+                        .sinifAdi("Su")
+                        .ogrenciler(List.of(ogrenci.getKisiselBilgiler().getIsim()))
+                        .build();
+
+                SinifController sinifController=new SinifController();
+                sinifController.save(sinif);
+
+
+                //ÖDEVÖDEVÖDEVÖDEVÖDEV
+                // Ogretmen ve Sinif icin gerekli katmanları olusturalim.
+                // Main metodunda controller aracılığıyla her entity için save işlemini gerçekleştirelim.
+
+
+            }
+        }

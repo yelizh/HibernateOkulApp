@@ -16,17 +16,31 @@ public class OgrenciService {
     public Ogrenci save(Ogrenci ogrenci){
         return ogrenciRepository.save(ogrenci);
     }
+    public Iterable<Ogrenci> saveAll(Iterable<Ogrenci> ogrenci){
+        return ogrenciRepository.saveAll(ogrenci);
 
-    public void update(Ogrenci ogrenci){
-        ogrenciRepository.update(ogrenci);
     }
-
-    public List<Ogrenci> findAll(){
-        return ogrenciRepository.findAll();
+    public void delete(Ogrenci ogrenci){
+        ogrenciRepository.delete(ogrenci);
     }
-
-    public Optional<Ogrenci> findById(Long id){
+    public void deleteById(Long id) {
+        ogrenciRepository.deleteById(id);
+    }
+    public Optional<Ogrenci> findById(Long id) {
         return ogrenciRepository.findById(id);
     }
+    public boolean existById(Long id) {
+        return ogrenciRepository.existById(id);
+
+    }
+    public List<Ogrenci> findAll() {
+        return ogrenciRepository.findAll();
+    }
+    public List<Ogrenci> findByColumnNameAndValue(String columnName, String value) {
+    return ogrenciRepository.findByColumnNameAndValue(columnName, value);
+    }
+
+
 }
+
 

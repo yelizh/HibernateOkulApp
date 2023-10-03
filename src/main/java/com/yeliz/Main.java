@@ -16,10 +16,6 @@ import java.util.List;
 public class Main {
             public static void main(String[] args) {
 
-                //ÖDEVÖDEVÖDEVÖDEVÖDEV
-                // Ogretmen ve Sinif icin gerekli katmanları olusturalim.
-                // Main metodunda controller aracılığıyla her entity için save işlemini gerçekleştirelim.
-
 
                 Ogrenci ogrenci = Ogrenci.builder()
                         .kisiselBilgiler(KisiselBilgiler.builder()
@@ -52,12 +48,5 @@ public class Main {
 
                 SinifController sinifController=new SinifController();
                 sinifController.save(sinif);
-
-
-                //ÖDEVÖDEVÖDEVÖDEVÖDEV
-                // Ogretmen ve Sinif icin gerekli katmanları olusturalim.
-                // Main metodunda controller aracılığıyla her entity için save işlemini gerçekleştirelim.
-
-
             }
         }

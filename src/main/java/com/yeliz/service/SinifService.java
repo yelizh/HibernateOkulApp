@@ -18,12 +18,12 @@ public class SinifService {
 
         return sinifRepository.save(sinif);
     }
-    public Iterable<Sinif> saveAll(Iterable<Sinif> ogrenci){
-        return sinifRepository.saveAll(ogrenci);
+    public Iterable<Sinif> saveAll(Iterable<Sinif> sinif){
+        return sinifRepository.saveAll(sinif);
 
     }
-    public void delete(Sinif ogrenci){
-        sinifRepository.delete(ogrenci);
+    public void delete(Sinif sinif){
+        sinifRepository.delete(sinif);
     }
     public void deleteById(Long id) {
         sinifRepository.deleteById(id);
@@ -40,6 +40,4 @@ public class SinifService {
     public List<Sinif> findByColumnNameAndValue(String columnName, String value) {
         return sinifRepository.findByColumnNameAndValue(columnName, value);
     }
-
-
 }
